@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrea Bruno | UNILOY Digital Card</title>
+  <meta name="description" content="Digital business card for Andrea Bruno, Finance Manager at Uniloy Italy SRL." />
+  <meta name="theme-color" content="#005baa" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <style>
+    :root { --blue:#005baa; --blue2:#004b95; --grey:#9d9592; --ink:#152033; --muted:#647084; --bg:#f6f8fb; --card:#ffffff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: radial-gradient(circle at top left, #eef5ff, var(--bg) 42%, #fff); color:var(--ink); min-height:100vh; display:grid; place-items:center; padding:24px; }
+    .card { width:min(760px,100%); background:rgba(255,255,255,.92); border:1px solid rgba(0,91,170,.12); border-radius:28px; box-shadow:0 24px 80px rgba(21,32,51,.13); overflow:hidden; }
+    .bar { height:8px; background:linear-gradient(90deg, var(--blue), var(--blue2), var(--grey)); }
+    .inner { padding:34px; }
+    .top { display:flex; align-items:center; gap:24px; justify-content:space-between; flex-wrap:wrap; }
+    .logo { width:230px; max-width:100%; height:auto; display:block; }
+    .badge { color:var(--blue); border:1px solid rgba(0,91,170,.18); background:#f1f7ff; padding:8px 12px; border-radius:999px; font-size:13px; font-weight:700; letter-spacing:.04em; }
+    h1 { margin:34px 0 8px; font-size:clamp(34px,7vw,58px); line-height:.96; letter-spacing:-.055em; }
+    .role { color:var(--blue); font-size:clamp(16px,2.8vw,22px); line-height:1.35; font-weight:750; max-width:680px; }
+    .bio { margin-top:18px; font-size:18px; color:var(--muted); line-height:1.55; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:28px; }
+    a.button, button.button { appearance:none; border:0; width:100%; cursor:pointer; text-decoration:none; text-align:center; background:var(--blue); color:white; padding:15px 16px; border-radius:16px; font-weight:800; font-size:15px; box-shadow:0 12px 24px rgba(0,91,170,.18); }
+    a.secondary, button.secondary { background:#edf3fb; color:var(--ink); box-shadow:none; border:1px solid rgba(21,32,51,.08); }
+    .details { margin-top:28px; display:grid; gap:10px; color:var(--muted); font-size:15px; }
+    .details strong { color:var(--ink); }
+    .qrwrap { margin-top:30px; padding:18px; border-radius:22px; background:#f7f9fc; display:flex; gap:18px; align-items:center; }
+    .qrwrap img { width:112px; height:112px; border-radius:12px; }
+    .small { font-size:13px; color:var(--muted); line-height:1.45; }
+    .lang { margin-top:22px; border-top:1px solid rgba(21,32,51,.08); padding-top:18px; color:var(--muted); line-height:1.55; }
+    @media (max-width:620px) { .inner { padding:24px; } .grid { grid-template-columns:1fr; } .qrwrap { flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="bar"></div>
+    <section class="inner">
+      <div class="top">
+        <img class="logo" src="logo.png" alt="UNILOY logo" />
+        <div class="badge">DIGITAL BUSINESS CARD</div>
+      </div>
+
+      <h1>Andrea Bruno</h1>
+      <div class="role">Finance Manager | FP&amp;A, Controlling &amp; Accounting | Italy &amp; European Subsidiaries</div>
+      <p class="bio">Uniloy means quality, exceeding your expectations is our goal.</p>
+
+      <div class="grid">
+        <a class="button" href="contact.vcf" download>Salva contatto / Save contact</a>
+        <a class="button secondary" href="tel:+3902970007296">Chiama / Call</a>
+        <a class="button secondary" href="mailto:andrea.bruno@uniloy.com">Email</a>
+        <a class="button secondary" href="https://www.uniloy.com" target="_blank" rel="noopener">Sito web / Website</a>
+        <a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=Via%20Emilio%20Alessandrini%2043%2C%2020013%20Magenta%20MI%2C%20Italy" target="_blank" rel="noopener">Mappa / Map</a>
+        <button class="button secondary" onclick="shareCard()">Condividi / Share</button>
+      </div>
+
+      <div class="details">
+        <div><strong>Uniloy Italy SRL</strong></div>
+        <div>Via Emilio Alessandrini 43, 20013 Magenta (MI), Italy</div>
+        <div>+39 02970007296 · andrea.bruno@uniloy.com</div>
+        <div>www.uniloy.com</div>
+      </div>
+
+      <div class="qrwrap">
+        <img src="qr.png" alt="QR code for Andrea Bruno UNILOY digital card" />
+        <div>
+          <strong>Scan to open this card</strong>
+          <div class="small">Scansiona il QR code per aprire il biglietto digitale. Su iPhone o Android puoi salvarlo nella schermata Home come app.</div>
+        </div>
+      </div>
+
+      <div class="lang">
+        <strong>IT</strong> — Biglietto digitale gratuito con contatto scaricabile, QR code e pagina installabile.<br />
+        <strong>EN</strong> — Free digital card with downloadable contact, QR code and installable web app.
+      </div>
+    </section>
+  </main>
+  <script>
+    async function shareCard() {
+      const data = { title: 'Andrea Bruno | UNILOY', text: 'Digital business card - Andrea Bruno, Uniloy Italy SRL', url: window.location.href };
+      if (navigator.share) { await navigator.share(data); }
+      else { await navigator.clipboard.writeText(window.location.href); alert('Link copiato / Link copied'); }
+    }
+  </script>
+</body>
+</html>
