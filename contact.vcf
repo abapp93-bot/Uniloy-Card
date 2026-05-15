@@ -1,11 +1,12 @@
 BEGIN:VCARD
 VERSION:3.0
 FN:Andrea Bruno
+N:Bruno;Andrea;;;
 ORG:Uniloy Italy SRL
 TITLE:Finance Manager | FP&A, Controlling & Accounting | Italy & European Subsidiaries
 TEL;TYPE=WORK,VOICE:+3902970007296
 TEL;TYPE=CELL,VOICE:+393346051638
-EMAIL:andrea.bruno@uniloy.com
+EMAIL;TYPE=WORK:andrea.bruno@uniloy.com
 ADR;TYPE=WORK:;;Via Emilio Alessandrini 43;Magenta;MI;20013;Italy
 URL:https://www.uniloy.com
 NOTE:Uniloy means quality, exceeding your expectations is our goal

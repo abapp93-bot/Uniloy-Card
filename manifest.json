@@ -1,15 +1,11 @@
 {
   "name": "UNILOY Digital Card - Andrea Bruno",
   "short_name": "UNILOY Card",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#f6f8fb",
-  "theme_color": "#005baa",
+  "background_color": "#ffffff",
+  "theme_color": "#003B71",
   "icons": [
-    {
-      "src": "logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    {"src": "logo.png", "sizes": "512x512", "type": "image/png"}
   ]
 }
